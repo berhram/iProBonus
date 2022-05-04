@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="go_button">Go button</string>
+    <string name="info_button">Info button</string>
+    <string name="bonus">бонусов</string>
+    <string name="will_expire">сгорит</string>
+    <string name="fire_image">Fire image</string>
+</resources>

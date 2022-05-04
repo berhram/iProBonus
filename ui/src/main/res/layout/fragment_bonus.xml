@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="230dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/transparent_box"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/colored_box"
+                android:layout_weight="1"
+                android:background="@drawable/accent_colored_box"
+                android:backgroundTint="#D2333E"/>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:id="@+id/bonus_holder"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/end_vertical_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_vertical_guideline"
+            android:background="@drawable/bonux_box"
+            android:elevation="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bonus_counter"
+                app:layout_constraintStart_toStartOf="@id/inner_start_vertical_guideline"
+                app:layout_constraintTop_toTopOf="@id/bonus_holder"
+                app:layout_constraintBottom_toTopOf="@id/expiration_date"
+                android:text="250"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bonuses_current"
+                app:layout_constraintStart_toEndOf="@id/bonus_counter"
+                app:layout_constraintTop_toTopOf="@id/bonus_holder"
+                app:layout_constraintBottom_toTopOf="@id/expiration_date"
+                android:layout_marginStart="8dp"
+                android:text="@string/bonus"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/expiration_date"
+                android:textColor="@android:color/darker_gray"
+                app:layout_constraintStart_toStartOf="@id/inner_start_vertical_guideline"
+                app:layout_constraintTop_toBottomOf="@id/bonus_counter"
+                app:layout_constraintBottom_toBottomOf="@id/bonus_holder"
+                android:textSize="16sp"
+                android:text="29.03"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/will_expire"
+                app:layout_constraintStart_toEndOf="@id/expiration_date"
+                app:layout_constraintTop_toTopOf="@id/expiration_date"
+                app:layout_constraintBottom_toBottomOf="@id/expiration_date"
+                android:layout_marginStart="5dp"
+                android:text="@string/will_expire"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="16sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fire"
+                android:contentDescription="@string/fire_image"
+                app:layout_constraintStart_toEndOf="@id/will_expire"
+                app:layout_constraintEnd_toStartOf="@id/expiration_counter"
+                app:layout_constraintTop_toTopOf="@id/expiration_date"
+                app:layout_constraintBottom_toBottomOf="@id/expiration_date"
+                android:src="@drawable/ic_fire"
+                android:layout_marginStart="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/expiration_counter"
+                android:textColor="@android:color/darker_gray"
+                app:layout_constraintStart_toEndOf="@id/fire"
+                app:layout_constraintTop_toTopOf="@id/expiration_date"
+                app:layout_constraintBottom_toBottomOf="@id/expiration_date"
+                android:textSize="16sp"
+                android:text="50"
+                android:layout_marginStart="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bonuses_expiration"
+                android:textColor="@android:color/darker_gray"
+                app:layout_constraintStart_toEndOf="@id/expiration_counter"
+                app:layout_constraintTop_toTopOf="@id/expiration_date"
+                app:layout_constraintBottom_toBottomOf="@id/expiration_date"
+                android:textSize="16sp"
+                android:text="@string/bonus"
+                android:layout_marginStart="5dp"/>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/go_button"
+                app:layout_constraintEnd_toEndOf="@id/inner_end_vertical_guideline"
+                app:layout_constraintTop_toTopOf="@id/bonus_holder"
+                app:layout_constraintBottom_toBottomOf="@id/bonus_holder"
+                android:src="@drawable/ic_go_button"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/go_button"
+                android:tint="#D2333E"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/inner_start_vertical_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/inner_end_vertical_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/info_button"
+        app:layout_constraintEnd_toEndOf="@id/end_vertical_guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bonus_holder"
+        android:src="@drawable/ic_info"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/info_button"
+        android:tint="#D2333E"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_vertical_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_vertical_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
